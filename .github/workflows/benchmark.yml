@@ -1,0 +1,39 @@
+name: guardrail-benchmark
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  run-benchmark:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run baseline (no firewall)
+        run: python runner.py --mode mock
+
+      - name: Run with firewall
+        run: python runner.py --mode mock --firewall --profile balanced
+
+      - name: Generate report
+        run: python scorer.py
+
+      - name: Install backend dependencies
+        run: pip install -r requirements.txt
+
+      - name: Smoke test backend DB layer
+        run: |
+          python -c "
+          from app import db
+          db.DB_PATH = 'ci_test.db'
+          db.init_db()
+          print('DB schema initialized OK')
+          "
