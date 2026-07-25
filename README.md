@@ -161,7 +161,7 @@ ai-guardrail/
   currently a keyword heuristic — replace it with a real classifier for
   more accurate measurement in production use.
 
-## Limitations (be upfront about these)
+## Limitations 
 
 - Signal-based detection is still heuristic — a sufficiently novel
   attack can evade it. Treat this as one layer in a defense-in-depth
