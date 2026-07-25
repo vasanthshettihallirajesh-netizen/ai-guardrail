@@ -1,0 +1,12 @@
+{
+  "name": "strict",
+  "high_threshold": 4,
+  "medium_threshold": 2,
+  "weights": {
+    "pattern": 1.2,
+    "instruction_density": 10.0,
+    "spacing_obfuscation": 5.0,
+    "repetition": 4.0,
+    "length_anomaly": 3.0
+  }
+}

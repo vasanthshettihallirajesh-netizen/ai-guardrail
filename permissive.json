@@ -1,0 +1,12 @@
+{
+  "name": "permissive",
+  "high_threshold": 9,
+  "medium_threshold": 5,
+  "weights": {
+    "pattern": 0.8,
+    "instruction_density": 6.0,
+    "spacing_obfuscation": 3.0,
+    "repetition": 2.0,
+    "length_anomaly": 1.0
+  }
+}

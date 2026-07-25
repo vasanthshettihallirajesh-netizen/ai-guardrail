@@ -1,0 +1,12 @@
+{
+  "name": "balanced",
+  "high_threshold": 6,
+  "medium_threshold": 3,
+  "weights": {
+    "pattern": 1.0,
+    "instruction_density": 8.0,
+    "spacing_obfuscation": 4.0,
+    "repetition": 3.0,
+    "length_anomaly": 2.0
+  }
+}
